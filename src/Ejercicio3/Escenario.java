@@ -120,7 +120,7 @@ public class Escenario {
         
         Wall bloc67 = new Wall(ciudad, /* Y */3, /* X*/2, Direction.EAST);
         Wall bloc68 = new Wall(ciudad, /* Y */4, /* X*/2, Direction.EAST);
-        Thing termino=new Thing (ciudad,0,7);
+        Thing termino=new Thing (ciudad,1,8);
         
 }
     

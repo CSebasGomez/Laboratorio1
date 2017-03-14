@@ -19,7 +19,10 @@ public class Solucion {
         City Cali=x.getCiudad();
         Robot z = new Robot(Cali,w,t,Direction.EAST,0);
         while((z.countThingsInBackpack()==0)){
-            z.turnLeft();
+            //z.turnLeft();
+            for(int i=0;i<3;i++){
+                z.turnLeft();
+            }
             if(z.frontIsClear()){
                 z.move();
                 if(z.canPickThing()){
@@ -27,9 +30,7 @@ public class Solucion {
                 }
             }
             else{
-                for(int i=0;i<3;i++){
-                    z.turnLeft();
-                }
+                z.turnLeft();
                 if(z.frontIsClear()){
                         z.move();
                         if(z.canPickThing()){
@@ -37,9 +38,7 @@ public class Solucion {
                 }
                 }
                 else{
-                    for(int i=0;i<3;i++){
                     z.turnLeft();
-                    }
                 }
             } 
         }
