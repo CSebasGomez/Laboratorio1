@@ -14,6 +14,7 @@ import java.util.Scanner;
 /**
  *
  * @author Koonda15
+ * @version 1.0
  */
 public class main {
     public static void main(String[] args) {
