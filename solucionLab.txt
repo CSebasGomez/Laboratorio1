@@ -1,0 +1,44 @@
+public void SolucionarLaberinto(Escenario x,int w,int t){
+        City Cali=x.getCiudad();
+        Robot z = new Robot(Cali,w,t,Direction.EAST,0);
+        boolean[][] matriz= new boolean[12][15];
+        for(int i=0;i<12;i++){
+            for(int j=0;j<15;j++){
+                matriz[i][j]=false;
+            }
+        }
+        while(z.getStreet()!= 0 && (z.getAvenue()!=14)){
+            //z.turnLeft();
+            if(z.canPickThing()){
+                matriz[z.getStreet()][z.getAvenue()]=true;
+            }
+            for(int i=0;i<3;i++){
+                z.turnLeft();
+            }
+            if(z.frontIsClear()){
+                z.move();
+                if(z.canPickThing()){
+                    z.pickThing();
+                }
+            }
+            else{
+                z.turnLeft();
+                if(z.frontIsClear()){
+                        z.move();
+                        if(z.canPickThing()){
+                        z.pickThing();
+                }
+                }
+                else{
+                    z.turnLeft();
+                }
+            } 
+        }
+        for(int i=0;i<12;i++){
+            for(int j=0;j<15;j++){
+                if(matriz[i][j]=true){
+                    System.out.println("Habia un objeto en la posicion "+i+","+j);
+                }
+            }
+        }
+    }
